@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar {
+    width: 100%;
+    height: 75px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO */
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: yellow;
+}
+
+/* LINKS */
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 10px 5px;
+    transition: 0.3s;
+}
+
+/* UNDERLINE ANIMATION */
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: yellow;
+    transform: translateX(-50%);
+    transition: 0.3s;
+}
+
+/* HOVER */
+
+.nav-links a:hover {
+    color: yellow;
+    text-shadow: 0 0 10px yellow,
+                 0 0 20px yellow;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* SECTIONS */
+
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 10% 50px;
+    gap: 50px;
+}
+
+/* LEFT SIDE */
+
+.home-content {
+    width: 55%;
+}
+
+.hello {
+    color: yellow;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.home-content h1 {
+    font-size: 50px;
+    margin: 10px 0;
+}
+
+.home-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.home-content h2 span {
+    color: yellow;
+}
+
+.description {
+    max-width: 550px;
+    line-height: 1.7;
+    color: #ccc;
+    font-size: 17px;
+}
+
+/* BUTTONS */
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    color: black;
+    background: yellow;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: yellow;
+    border: 2px solid yellow;
+    box-shadow: 0 0 15px yellow;
+}
+
+.second {
+    background: transparent;
+    color: yellow;
+    border: 2px solid yellow;
+}
+
+.second:hover {
+    background: yellow;
+    color: black;
+}
+
+/* RIGHT SIDE */
+
+.home-image {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.home-image img {
+  display:flex;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid yellow;
+    box-shadow: 0 0 25px yellow;
+    
+    animation: float 3s ease-in-out infinite;
+}
+
+/* IMAGE ANIMATION */
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 120px;
+    }
+
+    .home-content {
+        width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: 38px;
+    }
+
+    .home-image {
+        width: 100%;
+        order: -1;
+    }
+
+    .home-image img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+}
+.about {
+    min-height: 100vh;
+    padding: 100px 10%;
+    background: #111;
+    color: white;
+}
+
+/* ABOUT ME AT TOP */
+.about h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+    display:flex;
+  justify-content: center;
+}
+
+.about h2 span {
+    color: yellow;
+}
+
+/* ABOUT BOX */
+.about-box {
+    max-width: 700px;
+    margin: auto;
+    padding: 30px;
+    border: 2px solid yellow;
+    border-radius: 15px;
+    box-shadow: 0 0 15px yellow;
+  animation: float 3s ease-in-out infinite;
+}
+
+.about-box p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 12px 0;
+    color: #ddd;
+}
+
+.about-box strong {
+    color: yellow;
+}
+
+.services {
+    min-height: 100vh;
+    padding: 100px 10%;
+    background: #111;
+    color: white;
+}
+
+
+
+.services h2 {
+  display:none;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.services h2 span {
+    color: yellow;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.service-box {
+    padding: 30px;
+    border: 2px solid yellow;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.service-box h3 {
+    color: yellow;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.service-box p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* HOVER ANIMATION */
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px yellow;
+    background: transparent;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .service-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.contact {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.contact h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-icons a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+    color: white;
+    background: #222;
+    border-radius: 50%;
+
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-icons a:hover {
+    transform: translateY(-6px);
+    background: #555;
+    box-shadow:0 0 20px white;
+}
+.contant-icons a:active{
+  background:yellow;
+}
+.last{
+  display:flex;
+  justify-content: center;
+  
+  align-items:center;
+  color:white;
+  font-size:25px;
+  margin-top:-50px;
+}
